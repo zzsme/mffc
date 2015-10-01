@@ -4,3 +4,4 @@
 .env
 /.idea
 /vendor
+dump.rdb
