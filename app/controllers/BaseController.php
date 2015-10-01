@@ -18,5 +18,11 @@ class BaseController
 			extract($view->data);
 			require $view->view;
 		}
+		
+		$mail = $this->mail;
+		if ($mail instanceof Mail) {
+			$mailer = new Nette\Mail\SmtpMailer($mail->config);
+			$mailer->send($mail);
+		}
 	}
 }
